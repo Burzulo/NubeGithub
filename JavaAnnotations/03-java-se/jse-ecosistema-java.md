@@ -3,7 +3,7 @@
 <br>
 
 - [Arquitectura](#-arquitectura-del-ecosistema-java)
-- [Ciclo de vida](#-ciclo-de-vida-compilación-vs-ejecución)
+- [Ciclo de vida: Compilación vs. Ejecución](#-ciclo-de-vida-compilación-vs-ejecución)
 - [Estructura básica](#-estructura-básica-de-un-programa-java)
 
 <br>
@@ -12,7 +12,7 @@
 
 Para entender Java, hay que diferenciar los tres componentes principales que permiten compilar, ejecutar y desarrollar aplicaciones.  
 
-### 🔖 JVM (Java Virtual Machine)
+### ✧ JVM (Java Virtual Machine)
 
 La **Máquina Virtual de Java (JVM)** es el componente central y clave de la **portabilidad** de Java.
 
@@ -20,13 +20,13 @@ Su propósito es ser un programa que **ejecuta el bytecode** generado por el com
 
 Su función principal es actuar como un **intérprete** y una capa de abstracción. Cuando un programa Java es ejecutado, la JVM toma las instrucciones del bytecode y las traduce al **lenguaje nativo** del sistema operativo en tiempo real. Esto significa que mientras el bytecode sea el mismo, el programa funcionará en cualquier plataforma que tenga una implementación de la JVM.  
 
-### 🔖 JRE (Java Runtime Environment)
+### ✧ JRE (Java Runtime Environment)
 
 El **Entorno de Ejecución de Java (JRE)** es la infraestructura mínima requerida para **correr o ejecutar** cualquier programa Java ya compilado. Está diseñado exclusivamente para la fase de consumo o uso de la aplicación por parte de un usuario final.
 
 El JRE se compone de dos partes esenciales. La primera es la **Máquina Virtual de Java (JVM)**. La segunda son las **Librerías de Clases Centrales** de Java (los archivos `.jar` y la API central), que contienen todo el código preescrito que su programa utiliza, como las clases para manipular texto, colecciones, y otros elementos básicos.
 
-### 🔖 JDK (Java Development Kit)
+### ✧ JDK (Java Development Kit)
 
 El **Kit de Desarrollo de Java (JDK)** representa la **suite completa de software** ofrecida por Oracle y está diseñado específicamente para el **desarrollo** de software Java. El JDK proporciona todas las herramientas y utilidades que un ingeniero de sistemas o desarrollador necesita para escribir, compilar, depurar y ejecutar su propio código.
 
@@ -77,7 +77,7 @@ Sin sintaxis correcta, el compilador no puede traducir la intención a bytecode.
 
 Para que cualquier código Java sea funcional, debe estar organizado dentro de una estructura jerárquica que define el punto de inicio del programa y el alcance de sus instrucciones.
 
-### 🔖 Definición de la Clase (`class`)
+  -  ### Definición de la Clase (`class`)
 
 El primer y más fundamental requisito en Java es que todo el código ejecutable debe residir dentro de una clase. La clase actúa como el contenedor lógico del programa, encapsulando tanto los datos (atributos) como el comportamiento (métodos).
 
@@ -87,7 +87,7 @@ El primer y más fundamental requisito en Java es que todo el código ejecutable
   }
   ````
 
-### 🔖 El Bloque Principal (`main`)
+### ✧ El Bloque Principal (`main`)
 
 El método `main` es el **punto de entrada** oficial del programa. Una vez que la estructura de la clase está definida, necesitamos un punto de inicio para la ejecución. Este rol lo cumple el método ``main``, el cual es buscado y llamado directamente por la JVM cuando se lanza el programa.
 
@@ -102,7 +102,7 @@ La firma de este método es estricta y mandatoria para que la JVM pueda reconoce
 > 💡 **NOTA**  
 > Dentro de ``main`` se coloca el código que se ejecuta al arrancar la aplicación: crear objetos, llamar métodos, inicializar recursos o simplemente ejecutar instrucciones simples para empezar.
 
-#### ▫️ Análisis de la Firma
+### ⇒ Análisis de la Firma
 
   - ``public`` indica visibilidad. Significa que la JVM (u otros componentes externos) pueden ver y llamar a este método..  
 
@@ -114,7 +114,7 @@ La firma de este método es estricta y mandatoria para que la JVM pueda reconoce
 
   - ``String[] args`` es la lista de parámetros que recibe ``main``. Es un arreglo (lista) de cadenas de texto. Permite recibir argumentos desde la línea de comandos cuando se ejecuta la aplicación.
 
-### 🔖 Bloques de Código y Llaves (`{}`)
+### ✧ Bloques de Código y Llaves (`{}`)
 En Java, las llaves (``{}``) son fundamentales, ya que definen los **bloques de código** y establecen el **alcance** (scope) de las variables y las instrucciones.  
 
 Todo cuerpo de clase, método, o estructura de control de flujo (como ``if``, ``for``, ``while``) debe estar delimitado por estas llaves. Las instrucciones dentro de un bloque se ejecutan secuencialmente, y las variables declaradas dentro de ese bloque solo existen hasta que el programa sale de él. Esto ayuda a mantener el código organizado y evita conflictos de nombres.

@@ -2,21 +2,20 @@
 
 <br>
 
-- [📌 Control de Flujo](#-control-de-flujo)
-  - [📂 Estructuras Condicionales](#-estructuras-condicionales)
-    - [🔖 ``If``](#-if)
-    - [🔖 ``If + Else``](#-if--else)
-    - [🔖 ``If + Else + If | Else``](#-if--else--if--else)
-  - [📂 Selección múltiple](#-selección-múltiple)
-    - [🔖 ``switch``](#-switch)
-  - [📂 Iteraciones](#-iteraciones)
-    - [🔖 ``while``](#-while)
-    - [🔖 ``for``](#-for)
-    - [🔖 ``do-while``](#-do-while)
-  - [📂 Control de Saltos](#-control-de-saltos)
-    - [🔖 ``break``](#-break)
-    - [🔖 ``continue``](#-continue)
-    - [🔖 ``return``](#-return)
+- [Estructuras Condicionales](#-estructuras-condicionales)
+  - [``If``](#-if)
+  - [``If + Else``](#-if--else)
+  - [``If + Else + If | Else``](#-if--else--if--else)
+- [Selección múltiple](#-selección-múltiple)
+  - [``switch``](#-switch)
+- [Iteraciones](#-iteraciones)
+  - [``while``](#-while)
+  - [``for``](#-for)
+  - [``do-while``](#-do-while)
+- [Control de Saltos](#-control-de-saltos)
+  - [``break``](#-break)
+  - [``continue``](#-continue)
+  - [``return``](#-return)
 
 <br>
 
@@ -24,7 +23,7 @@
 
 Son aquellas que permiten la ejecución de unas u otras acciones dependiendo de que se cumpla o no una condición o dependiendo del valor que tome una determinada variable.
 
-### 🔖 ``If``
+### ✧ ``If``
 
 La estructura ``if`` ejecuta un **bloque de sentencias** solamente cuando se cumple la condición del ``if``.
 
@@ -39,7 +38,7 @@ if (condición) {
 
 La ``condición`` es una expresión que evalúa un valor lógico, por lo que el resultado solo puede ser ``true`` o ``false``. La condición siempre se debe escribir entre paréntesis. La selección se produce sobre el bloque de sentencias delimitado por llaves.
 
-### 🔖 ``If + Else``
+### ✧ ``If + Else``
 
 La estructura ``if-else`` selecciona entre **dos bloques de sentencias** mutuamente excluyentes.
 
@@ -54,7 +53,7 @@ if (condición) {
 }
 ````
 
-### 🔖 ``If + Else + If | Else``
+### ✧ ``If + Else + If | Else``
 
 Los condicionales múltiples son estructuras ``if`` y ``else`` anidadas entre sí, que permiten tener mayor control del flujo de un programa dependiendo de lo que se quiera hacer (o no) según diferentes condiciones y situaciones.
 
@@ -78,7 +77,7 @@ if (condición-1) {
 
 ## 📂 Selección múltiple
 
-### 🔖 ``switch``
+### ✧ ``switch``
 
 La estructura ``switch`` permite **seleccionar un bloque de sentencias** entre varios casos. Permite múltiples caminos a partir de la evaluación de una sola expresión/condición. La construcción de esta estructura se ejecuta mediante la evaluación de la condición y un conjunto de casos llamados ``cases``.
 
@@ -114,7 +113,7 @@ Estas estructuras permiten repetir un **número determinado** de instrucciones u
 - Controladas por un centinela
 - Controladas por un contador.
 
-### 🔖 ``while``
+### ✧ ``while``
 
 La estructura de repetición ``while`` repite el bloque de sentencias mientras **la condición del ``while`` es verdadera**. La condición se comprueba justo al principio. Si el resultado es falso, entonces no se ejecuta el bloque de sentencias. Por eso se puede ejecutar el bloque de sentencias de 0 (ninguna) a n (muchas) veces.
 
@@ -128,7 +127,7 @@ La condición se escribe obligatoriamente entre paréntesis. Cuando el programa 
 
 En cada iteración, cuando finaliza la ejecución del bloque de sentencias, vuelve a evaluar la condición. De nuevo, si es verdadera, ejecuta el bloque de sentencias, si es falsa finaliza el ``while``. Cuando esto último se produce, el flujo del programa continúa en la sentencia inmediatamente posterior al ``while``.
 
-### 🔖 ``for``
+### ✧ ``for``
 
 La estructura ``for`` repite el bloque de sentencias **mientras la condición del ``for`` es verdadera**. Sólo se debe utilizar cuando se sabe el número de veces que se debe repetir el bloque de sentencias.
 
@@ -146,7 +145,7 @@ for (inicializacion; condicion; actualización) {
 }
 ````
 
-### 🔖 ``do-while``
+### ✧ ``do-while``
 
 La estructura de repetición ``do-while`` ejecuta el bloque de sentencias **al menos una vez**. Después comprueba la condición y repite el bloque de sentencias mientras la condición es verdadera.
 
@@ -170,7 +169,8 @@ Cuando la palabra sea igual a ``salir``, el ``while`` se detiene y continúa con
 
 <br>
 
-> 💡 **Bucles Infinitos**  
+> [!NOTE]  
+> **Bucles Infinitos**  
 > Se produce cuando por algún motivo el programa entra en un bucle, pero el mismo no tiene una condición de salida. Esto puede suceder tanto en los bucles controlados por centinelas como por los controlados por contador.
 >  
 >  Se le llama **bucle infinito** porque al no haber una condición de salida, el bucle **continúa ejecutándose sin fin**.
@@ -181,7 +181,7 @@ Cuando la palabra sea igual a ``salir``, el ``while`` se detiene y continúa con
 
 Son instrucciones especiales que alteran el flujo normal de un programa, principalmente dentro de bucles (``for``, ``while``, etc.) o métodos.
 
-### 🔖 ``break``
+### ✧ ``break``
 
 Esta sentencia **termina** inmediatamente el bucle más cercano en el que se encuentra. Se usa para salir de un bucle cuando se cumple una condición y/o detener un ``switch``.
 
@@ -196,7 +196,7 @@ for (int i = 1; i <= 10; i++) {
 }
 ```
 
-### 🔖 ``continue``
+### ✧ ``continue``
 
 La sentencia **salta** el resto del código en la iteración actual del bucle y pasa a la siguiente vuelta. Se usa para ignorar ciertos valores o casos dentro de un bucle.
 
@@ -211,7 +211,7 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
-### 🔖 ``return``
+### ✧ ``return``
 
 Esta sentencia **finaliza** la ejecución de un método y (opcionalmente) **devuelve** un valor. Se usa en métodos que devuelven resultados o métodos ``void`` para salir antes si no hay nada más que hacer.
 
@@ -234,13 +234,3 @@ public static void saludar(String nombre) {
     System.out.println("Hola, " + nombre);
 }
 ```
-
-<br>
-
-<br>
-
-> ▶️📚 **links**  
-> [Condicionales en Java | Omega Knowledge](https://www.omega-knowledge.dev/curso/java/condicionales-en-java)  
-> [Switch-Case en Java | Omega Knowledge](https://www.omega-knowledge.dev/curso/java/switch-case-en-java)  
-> [Bucles en Java | Omega Knowledge](https://www.omega-knowledge.dev/curso/java/bucles-en-java)  
-> [break y continue en programación | Omega Knowledge](https://www.omega-knowledge.dev/curso/java/break-continue-en-java)  

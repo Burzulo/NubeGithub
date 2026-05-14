@@ -21,13 +21,13 @@
 
 <br>
 
-## 🔖 Logica de Programacion
+## ✧ Logica de Programacion
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
 <br>
 
-## 🔖 Entornos de Desarrollo
+## ✧ Entornos de Desarrollo
 
 - **IntelliJ IDEA** [⇒](./02-entorno-desarrollo/id-intellij.md)
   - Atajos de teclado
@@ -39,7 +39,7 @@
 
 <br>
 
-## 🔖 Java Standard Edition
+## ✧ Java Standard Edition
 
 - **Ecosistema Java** [⇒](./03-java-se/jse-ecosistema-java.md)
   - Arquitectura: Rol de la **JVM**, **JRE** y el **JDK**
@@ -51,6 +51,7 @@
   - Casting: Conversiones implícitas y explícitas
   - Wrappers: Autoboxing y Unboxing
   - ❌ Constantes: Uso de la palabra clave `final`
+  - ❌ El String Pool: Inmutabilidad de la clase `String`
 
 - **Operadores** [⇒](./03-java-se/jse-operadores.md)
   - Aritméticos, Unarios, Relacionales y Lógicos
@@ -62,7 +63,7 @@
   - Iteraciones (Bucles): ``for``, ``while``, ``do-while`` y ``for-each``
   - Control de saltos: ``break``, ``continue`` y ``return``
 
-- **Arrays y Colecciones Básicas** [⇒](./03-java-se/jse-arrays.md)
+- **Estructuras de Datos Estáticas (Arrays)** [⇒](./03-java-se/jse-arrays.md)
   - Arrays Unidimensionales y Multidimensionales
   - Propiedad ``lenght``
   - Recorrido: Uso de ``for`` tradicional vs. ``for-each``
@@ -75,18 +76,19 @@
 
 <br>
 
-## 🔖 Bases de Datos
+## ✧ Bases de Datos
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
 <br>
 
-## 🔖 Programacion Orientada a Objetos
+## ✧ Programacion Orientada a Objetos
 
 - **Fundamentos de Clases y Objetos** [⇒](./05-java-poo/poo-clases-objetos.md)
   - Conceptos: Clase y Objeto (ciclo de vida e instanciación `new`)
   - Miembros de una clase: Atributos y Métodos
   - Constructores: Por defecto, parametrizados y el rol de `this`
+  - ❌ Modificador `static`: Atributos y métodos de clase
 
 - **Gestión de Memoria** [⇒](./05-java-poo/poo-gestion-memoria.md)
   - El modelo *Stack* vs. *Heap*
@@ -119,6 +121,9 @@
   - Métodos `default`, `static` y `private`
   - Comparativa: Clases abstractas vs. Interfaces
 
+- **Genéricos (Generics)**
+  - ❌ El concepto de tipo parametrizado `<T>`
+
 - **Java Collections Framework**
   - ❌ Jerarquía de la API: Interface Collection vs. Map
   - ❌ Listas: ArrayList vs. LinkedList (cuándo usar cada una)
@@ -134,13 +139,19 @@
 
 <br>
 
-## 🔖 Java Web
+## ✧ Java Web
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
 <br>
 
-## 🔖 Spring Boot
+## ✧ Programación Funcional
+
+- [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
+
+<br>
+
+## ✧ Spring Boot
 
 ### Fundamentos y Contenedor de Spring (Core)
 
@@ -280,36 +291,31 @@ EL INDICE DE ARRIBA VA
   - ❌ Manejo Global de Excepciones: *`@RestControllerAdvice`* y *`@ExceptionHandler`*
   - Pruebas de integración: Uso de **Postman** para testing de endpoints
 
-<br>
 
-## 🔖 Programación Funcional
-
-- [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
-
-## 🔖 Microservicios
+## ✧ Microservicios
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Seguridad
+## ✧ Seguridad
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Testing
+## ✧ Testing
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Deploy
+## ✧ Deploy
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Patrones de Diseño
+## ✧ Patrones de Diseño
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Spring IA
+## ✧ Spring IA
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
 
-## 🔖 Herramientas Complementarias
+## ✧ Herramientas Complementarias
 
 - [Índice ⇒](...)  🚧 en CONSTRUCCION !!!!
