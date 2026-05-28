@@ -10,9 +10,23 @@
 
 ## 📂 Atajos del teclado PROBARRRRRRRRRRRRRRRRRRRRRRRRR
 
-### 🔖 Para Imprimir en Consola
+<br>
+
+- MOVER una LINEA DE CODIGO
+
+  > **Shift + Alt + ↑ ↓**  
+  > Posicionarse sobre la linea que se quiera mover, presionar `Shift` + `Alt` y mover con las flechas del teclado la posicion deseada
 
 <br>
+
+- CAMBIAR nombre de Variable en TODO el archivo
+
+  > **Shift + F6**  
+  > Posicionarse sobre la variable a cambiar, presionar `Shift`+ `F6`y elegir el nombre que se desee. Al cambiar la varible lo hara en todo el documento donde esta se encuentre
+
+<br>
+
+
 
 —------ PROBAR son eclipseeeeeeeeeeeeeeeeeee  -----------------------------------------------------------------------------------
 

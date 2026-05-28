@@ -23,10 +23,8 @@
 
 Son aquellas que permiten la ejecución de unas u otras acciones dependiendo de que se cumpla o no una condición o dependiendo del valor que tome una determinada variable.
 
-<br>
-
 ### ✧ ``If``
-
+  
 La estructura ``if`` ejecuta un **bloque de sentencias** solamente cuando se cumple la condición del ``if``.
 
 - Si la condición es verdadera se ejecuta el bloque de sentencias  
@@ -39,8 +37,6 @@ if (condición) {
 ````
 
 La ``condición`` es una expresión que evalúa un valor lógico, por lo que el resultado solo puede ser ``true`` o ``false``. La condición siempre se debe escribir entre paréntesis. La selección se produce sobre el bloque de sentencias delimitado por llaves.
-
-<br>
 
 ### ✧ ``If + Else``
 
@@ -56,8 +52,6 @@ if (condición) {
     // bloque de sentencias else
 }
 ````
-
-<br>
 
 ### ✧ ``If + Else + If | Else``
 
@@ -82,8 +76,6 @@ if (condición-1) {
 <br>
 
 ## 📂 Selección múltiple
-
-<br>
 
 ### ✧ ``switch``
 
@@ -121,8 +113,6 @@ Estas estructuras permiten repetir un **número determinado** de instrucciones u
 - Controladas por un centinela
 - Controladas por un contador.
 
-<br>
-
 ### ✧ ``while``
 
 La estructura de repetición ``while`` repite el bloque de sentencias mientras **la condición del ``while`` es verdadera**. La condición se comprueba justo al principio. Si el resultado es falso, entonces no se ejecuta el bloque de sentencias. Por eso se puede ejecutar el bloque de sentencias de 0 (ninguna) a n (muchas) veces.
@@ -136,8 +126,6 @@ while (condición) {
 La condición se escribe obligatoriamente entre paréntesis. Cuando el programa ejecuta un ``while``, lo primero que hace es evaluar la condición. Si es verdadera ejecuta el bloque de sentencias, si es falsa finaliza el ``while``.
 
 En cada iteración, cuando finaliza la ejecución del bloque de sentencias, vuelve a evaluar la condición. De nuevo, si es verdadera, ejecuta el bloque de sentencias, si es falsa finaliza el ``while``. Cuando esto último se produce, el flujo del programa continúa en la sentencia inmediatamente posterior al ``while``.
-
-<br>
 
 ### ✧ ``for``
 
@@ -156,8 +144,6 @@ for (inicializacion; condicion; actualización) {
     // bloque de sentencias
 }
 ````
-
-<br>
 
 ### ✧ ``do-while``
 
@@ -195,8 +181,6 @@ Cuando la palabra sea igual a ``salir``, el ``while`` se detiene y continúa con
 
 Son instrucciones especiales que alteran el flujo normal de un programa, principalmente dentro de bucles (``for``, ``while``, etc.) o métodos.
 
-<br>
-
 ### ✧ ``break``
 
 Esta sentencia **termina** inmediatamente el bucle más cercano en el que se encuentra. Se usa para salir de un bucle cuando se cumple una condición y/o detener un ``switch``.
@@ -227,13 +211,11 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
-<br>
-
 ### ✧ ``return``
 
 Esta sentencia **finaliza** la ejecución de un método y (opcionalmente) **devuelve** un valor. Se usa en métodos que devuelven resultados o métodos ``void`` para salir antes si no hay nada más que hacer.
 
-```java
+````java
 // ejemplo 1 con VALOR
 public static int suma(int a, int b) {
 
@@ -251,4 +233,4 @@ public static void saludar(String nombre) {
  
     System.out.println("Hola, " + nombre);
 }
-```
+````
