@@ -212,6 +212,8 @@ if (indice >= 0 && indice < frutas.length) {
 
 Una de las cosas más útiles de los arrays es poder recorrer todos sus elementos automáticamente. En lugar de escribir array[0], array[1], array[2]... uno por uno, se usan los **bucles** para hacerlo de forma automática y elegante.
 
+<br>
+
 ### ✧ ``for`` Tradicional
 
   Como vimos en los ejemplos anteriores, el bucle ``for`` es perfecto para recorrer arrays porque se puede usar un contador que va desde ``0`` hasta ``length - 1``:
@@ -233,6 +235,8 @@ Una de las cosas más útiles de los arrays es poder recorrer todos sus elemento
   5. Manzanas
   */
   ````
+
+<br>
 
 ### ✧ ``for-each``  (Mejorado)
 
@@ -264,7 +268,7 @@ Me gusta la Uva
 
 <br>
 
-### ⇝ Comparación ``for`` tradicional vs. ``for-each``
+### ⇒ Comparación ``for`` tradicional vs. ``for-each``
 
  | ``for`` tradicional | ``for-each`` |
   | :--- | :--- |
@@ -279,12 +283,13 @@ Me gusta la Uva
 > - Usar ``for-each`` cuando solo se necesite leer y mostrar valores
 > - Usar ``for`` tradicional cuando se necesite el índice o modificar elementos
 
-
 <br>
 
 ## 📂 Clase java.util.Arrays
 
 La clase ``java.util.Arrays`` pertenece al paquete `java.util` y contiene métodos estáticos que la vida al manipular arreglos (ordenar, buscar, llenar, comparar, etc.).
+
+<br>
 
 ### ✧ Metodo `sort()`
 
@@ -306,6 +311,8 @@ public class EjemploSort {
 }
 ````
 
+<br>
+
 ### ✧ Metodo `fill()`
 
 Se utiliza para asignar un valor específico a todos los elementos de un arreglo (o a un rango determinado). Es ideal para "limpiar" un arreglo o inicializarlo con un valor por defecto que no sea el cero.
@@ -318,6 +325,8 @@ Arrays.fill(puntuaciones, 10);
 
 // Resultado: [10, 10, 10, 10, 10]
 ````
+
+<br>
 
 ### ✧ Metodo `equals()`
 
@@ -337,6 +346,8 @@ int[] bandoC = {3, 2, 1};
 System.out.println(Arrays.equals(bandoA, bandoB)); // true
 System.out.println(Arrays.equals(bandoA, bandoC)); // false (mismo contenido, distinto orden)
 ````
+
+<br>
 
 ### ✧ Metodo `toString(()`
 

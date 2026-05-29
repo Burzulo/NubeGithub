@@ -34,6 +34,8 @@ Las variables se expresan:
   int 56;
   ````
 
+<br>
+
 ### ✧ Tipos De Datos
 
 En Java, los **tipos de datos primitivos** son los más básicos y eficientes para almacenar información simple. **No son objetos**, y se almacenan directamente en memoria, lo que los hace más rápidos que los objetos. Los tipos de datos definen qué puede ser almacenado dentro de una variable.
@@ -144,7 +146,7 @@ numeros.add(5); // El compilador transforma el int 5 en un objeto Integer autom�
 
 <br>
 
-### Diferencias Técnicas Clave
+### ⇒ Diferencias Técnicas Clave
 
 | | Primitivos | Wrappers |
 | :------------ | :------------ | :------------ |

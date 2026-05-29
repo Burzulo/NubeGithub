@@ -2,6 +2,11 @@
 
 <br>
 
+[Operadores](#-)  
+[Operador Ternario](#-operador-ternario)
+
+<br>
+
 Un **operador** es un **símbolo o palabra clave** que indica que se debe efectuar una determinada operación. Estas operaciones pueden ser de asignación, aritméticas, condicionales, relacionales, entre otras. En programación, los operadores son la herramienta básica para transformar datos y expresar lógica.
 
 Dependiendo del resultado obtenido en la evaluación de una expresión se puede hablar de expresiones aritméticas y expresiones lógicas
@@ -30,6 +35,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
   | Decremento (pre/post) | ``--`` | --a / a-- |
   | Identidad / Negación aritmética | ``+/-`` | -a / +a |
   | Negación lógica | ``!`` | !cond |
+
   > ``!cond``: ``cond`` es el nombre de una variable (abreviatura de "condición"), para que funcione, ``cond`` debe ser de tipo booleano (``true`` / ``false``), y ``!`` Es el operador ``NOT``.
 
 <br>
@@ -69,11 +75,15 @@ Posee tres principales partes en su estructura:
 - *Valor_si_verdadero* » El valor que se asignará a la variable si la condición es verdadera.
 - *Valor_si_falso* » El valor que se asignará a la variable si la condición es falsa.  
 
+<br>
+
 Este operador se caracteriza por su sintaxis compacta y su capacidad para simplificar la escritura de condicionales simples en una sola línea de código.
 
 ````java
 variable = (condición) ? valor-si-verdadero : valor-si-falso;
 ````
+
+<br>
 
 > [!IMPORTANT]  
 > La principal limitación del operador ternario (``? :``) es que debe retornar un valor y, por lo tanto, no se puede utilizar para ejecutar bloques complejos de código que no devuelvan nada.
