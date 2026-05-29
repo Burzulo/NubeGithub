@@ -8,7 +8,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
 
 <br>
 
-- **Aritméticos**  
+- ### Aritméticos  
   Los operadores aritméticos realizan operaciones matemáticas básicas
 
   | Nombre | Representación | Sintaxis |
@@ -21,7 +21,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
 
 <br>
 
-- **Unarios**  
+- ### Unarios  
   Los unarios necesitan un único operando para realizar su función
 
   | Nombre | Representación | Sintaxis |
@@ -34,7 +34,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
 
 <br>
 
-- **Relacionales:**  
+- ### Relacionales:  
   Se usan para comparar valores y devuelven booleanos
 
   | Nombre | Representación | Sintaxis |
@@ -48,7 +48,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
 
 <br>
 
-- **Condicionales / Lógicos:**  
+- ### Condicionales / Lógicos:  
   Se usan para comparar valores y devuelven booleanos
 
   | Nombre | Representación | Sintaxis |
@@ -59,7 +59,7 @@ Dependiendo del resultado obtenido en la evaluación de una expresión se puede 
 
 <br>
 
-### 🔖 Operador Ternario
+### ✧ Operador Ternario
 
 Es un operador en programación que **permite tomar decisiones SIMPLES basadas en una condición y asignar un valor a una variable o expresión en función de si la condición es verdadera o falsa**.
 
@@ -75,12 +75,5 @@ Este operador se caracteriza por su sintaxis compacta y su capacidad para simpli
 variable = (condición) ? valor-si-verdadero : valor-si-falso;
 ````
 
-> ⚠️ **IMPORTANTE**  
+> [!IMPORTANT]  
 > La principal limitación del operador ternario (``? :``) es que debe retornar un valor y, por lo tanto, no se puede utilizar para ejecutar bloques complejos de código que no devuelvan nada.
-
-<br>
-
-<br>
-
-> **links**  
-> 📚 [Operadores en Java | Omega Knowledge](https://www.omega-knowledge.dev/curso/java/operadores-en-java)

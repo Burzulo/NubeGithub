@@ -11,7 +11,7 @@
 
 ## 📂 Variables y Tipos Primitivos
 
-### 🔅 Variables
+### ✧ Variables
 
 Una variable es donde se **almacenan y se recuperan los datos** de un programa. En programación, se utilizan para guardar datos y estados, asignar ciertos valores de variables a otras, representar valores de expresiones matemáticas y mostrar valores por pantallas.
 
@@ -22,19 +22,19 @@ Las variables se expresan:
 - Como un **dato abstracto**
 - Como un **objeto**
 
-### ▪︎ Declaración
+  ### ⇒ Declaración
 
-La declaración de las variables cuenta con dos partes fundamentales: el *tipo de dato*, *nombre* de la variable y *punto y coma* al finalizar. Una vez declaradas, a las variables se le pueden asignar diferentes valores teniendo en cuenta el tipo de dato.
+  La declaración de las variables cuenta con dos partes fundamentales: el *tipo de dato*, *nombre* de la variable y *punto y coma* al finalizar. Una vez declaradas, a las variables se le pueden asignar diferentes valores teniendo en cuenta el tipo de dato.
 
-````java
-// sintaxis
-tipoDato nombre;
+  ````java
+  // sintaxis
+  tipoDato nombre;
 
-// ejemplo
-int 56;
-````
+  // ejemplo
+  int 56;
+  ````
 
-### 🔅 Tipos De Datos
+### ✧ Tipos De Datos
 
 En Java, los **tipos de datos primitivos** son los más básicos y eficientes para almacenar información simple. **No son objetos**, y se almacenan directamente en memoria, lo que los hace más rápidos que los objetos. Los tipos de datos definen qué puede ser almacenado dentro de una variable.
 
@@ -74,37 +74,35 @@ El **Casting** es un mecanismo que permite convertir un tipo de dato primitivo e
 
 Este proceso de transformar una variable de un tipo de dato a otro, cambia la forma en que el programa interpreta ese valor en memoria.
 
-### 🔅 Casting Implícito (Widening)
+- ### Casting Implícito (Widening)
 
-Se produce de forma AUTOMÁTICA cuando se mueve un valor de un tipo con menor capacidad a uno con mayor capacidad.
+  Se produce de forma AUTOMÁTICA cuando se mueve un valor de un tipo con menor capacidad a uno con mayor capacidad.  
+  **No hay pérdida de datos**.
 
-**No hay pérdida de datos**.
+  ````java
+  int edad = 25;
+  double edadPrecisa = edad; // El int "cabe" perfectamente en el double
+  // Resultado: 25.0
+  ````
 
-````java
-int edad = 25;
-double edadPrecisa = edad; // El int "cabe" perfectamente en el double
-// Resultado: 25.0
-````
+  > **Ruta de seguridad**: byte → short → int → long → float → double.
 
-> **Ruta de seguridad**: byte → short → int → long → float → double.
+- ### Casting Explícito (Narrowing)
 
-### 🔅 Casting Explícito (Narrowing)
+  Se debe realizar MANUALMENTE cuando se mueve un valor de un tipo con mayor capacidad a uno con menor capacidad.  
+  **Existe riesgo de pérdida de precisión o información**.
 
-Se debe realizar MANUALMENTE cuando se mueve un valor de un tipo con mayor capacidad a uno con menor capacidad.  
+  ````java
+  double precioOriginal = 19.99;
 
-**Existe riesgo de pérdida de precisión o información**.
+  // Casting Explícito: Forzamos la conversión a entero
+  int precioRedondeado = (int) precioOriginal; 
+  
+  System.out.println("Precio original: " + precioOriginal); // 19.99
+  System.out.println("Precio en int: " + precioRedondeado);   // 19
+  ````
 
-````java
-double precioOriginal = 19.99;
-
-// Casting Explícito: Forzamos la conversión a entero
-int precioRedondeado = (int) precioOriginal; 
-
-System.out.println("Precio original: " + precioOriginal); // 19.99
-System.out.println("Precio en int: " + precioRedondeado);   // 19
-````
-
-<br>
+  <br>
 
 ## 📂 Wrappers
 
@@ -146,7 +144,7 @@ numeros.add(5); // El compilador transforma el int 5 en un objeto Integer autom�
 
 <br>
 
-### ▫️ Diferencias Técnicas Clave
+### Diferencias Técnicas Clave
 
 | | Primitivos | Wrappers |
 | :------------ | :------------ | :------------ |
@@ -158,4 +156,5 @@ numeros.add(5); // El compilador transforma el int 5 en un objeto Integer autom�
 
 <br>
 
+> [!IMPORTANT]  
 > El uso de Wrappers introduce la capacidad de manejar valores nulos (``null``), algo imposible con los primitivos. Esta característica es fundamental en aplicaciones reales, como cuando trabajamos con bases de datos donde un campo numérico puede estar ausente. Sin embargo, como desarrolladores se debe ser consciente de que el uso excesivo de Wrappers conlleva una ligera carga adicional en el consumo de memoria y procesamiento, por lo que la regla general es priorizar los primitivos para cálculos intensivos y reservar los Wrappers para estructuras de datos y lógica de objetos.
