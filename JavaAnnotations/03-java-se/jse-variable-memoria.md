@@ -5,7 +5,6 @@
 - [Variables y Tipos Primitivos](#-variables-y-tipos-primitivos)
 - [Casting: Conversiones de Datos](#-casting-conversiones-de-datos)
 - [Wrappers](#-wrappers)
-- [❌ Constantes](#-...)
 
 <br>
 

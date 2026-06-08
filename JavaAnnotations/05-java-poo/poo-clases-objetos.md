@@ -4,15 +4,16 @@
 
 - [Conceptos: Clase y Objeto](#-clases-y-objetos)
 - [Miembros: Atributos y Métodos](#-miembros-atributos-y-métodos)
-- [Constructores: Constructor por defecto, parametrizado y uso de `this`](#-constructores)
+- [Constructores: por defecto, parametrizado y uso de `this`](#-constructores)
 
 <br>
 
 ## 📂 Conceptos: Clase y Objeto
 
-### 🔖 Clases
+### ✧ Clases
 
-Las clases son **plantillas** que permiten **construir objetos**. Es una de las principales formas de **«abstraer» objetos de la vida real**.
+Las clases son **plantillas** que permiten **construir objetos**.  
+Es una de las principales formas de **«abstraer» objetos de la vida real**.
 
 Todas las clases tienen las siguientes características o particularidades:
 
@@ -28,9 +29,12 @@ modificadorAcceso class nombreClase {
 
 Al momento de crear una clase y ponerle un **«nombre»** hay que tener en cuenta que generalmente están asociadas a **SUSTANTIVOS** en **SINGULAR**. Y todas las clases deben comenzar con letra **MAYÚSCULA** en cada una de sus palabras. Ej: ``Alumno``, ``AlumnoEgresado`` …
 
-### 🔖 Objetos
+<br>
 
-Los objetos son **instancias de clases** y se crean mediante la invocación de un **método** llamado **constructor**. Un OBJETO en programación es la representación lógica de un objeto en la vida real.
+### ✧ Objetos
+
+Los objetos son **instancias de clases** y se crean mediante la invocación de un **método** llamado **constructor**.  
+Un OBJETO en programación es la representación lógica de un objeto en la vida real.
 
 Para entenderlo profundamente, debemos desglosar sus tres pilares esenciales:
 
@@ -38,11 +42,17 @@ Para entenderlo profundamente, debemos desglosar sus tres pilares esenciales:
 
       Para que un objeto exista como tal debe cumplir con tres características:
 
-        * **Estado**: Representado por sus **atributos**. Es el conjunto de valores que tiene el objeto en un momento dado (por ejemplo, un objeto ``Auto`` cuyo atributo ``velocidad`` es ``80 km/h``).
+        - ***Estado***  
+        Representado por sus **atributos**.  
+        Es el conjunto de valores que tiene el objeto en un momento dado (por ejemplo, un objeto ``Auto`` cuyo atributo ``velocidad`` es ``80 km/h``).
 
-        * **Comportamiento**: Representado por sus **métodos**. Define qué puede hacer el objeto o qué servicios ofrece (el método ``acelerar()`` o ``frenar()``).
+        - ***Comportamiento***  
+        Representado por sus **métodos**.  
+        Define qué puede hacer el objeto o qué servicios ofrece (el método ``acelerar()`` o ``frenar()``).
 
-        * **Identidad**: Es lo que diferencia a un objeto de otro, incluso si tienen el mismo estado. Dos objetos ``Persona`` pueden tener el mismo nombre y edad, pero son instancias distintas en la memoria.
+        - ***Identidad***  
+        Es lo que diferencia a un objeto de otro, incluso si tienen el mismo estado.  
+        Dos objetos ``Persona`` pueden tener el mismo nombre y edad, pero son instancias distintas en la memoria.
 
    2. **El Ciclo de Vida: Instanciación y Memoria**  
 
@@ -55,23 +65,28 @@ Para entenderlo profundamente, debemos desglosar sus tres pilares esenciales:
 
       Ocurren dos cosas críticas:
 
-        * **Invocación del Constructor**: Se ejecuta un bloque de código especial para inicializar los atributos.
+        - **Invocación del Constructor**: Se ejecuta un bloque de código especial para inicializar los atributos.
 
-        * **Reserva de Memoria Heap**: El objeto se aloja en un área de la memoria llamada **Heap**, mientras que la variable ``p1`` es solo una **referencia** que nos permite manipular dicho objeto.
+        - **Reserva de Memoria Heap**: El objeto se aloja en un área de la memoria llamada **Heap**, mientras que la variable ``p1`` es solo una **referencia** que nos permite manipular dicho objeto.
 
    3. **Abstracción y Modelado**  
 
-      Modelar un objeto no significa copiar la realidad tal cual, sino abstraer solo lo necesario para el sistema. Si modelamos una ``Persona`` para un sistema de nómina, nos interesa su ``sueldo``; si la modelamos para un hospital, nos interesa su ``tipoDeSangre``. Un objeto es, por tanto, una simplificación útil de una entidad de la vida real.
+      Modelar un objeto no significa copiar la realidad tal cual, sino abstraer solo lo necesario para el sistema.  
+      Si modelamos una ``Persona`` para un sistema de nómina, nos interesa su ``sueldo``; si la modelamos para un hospital, nos interesa su ``tipoDeSangre``. Un objeto es, por tanto, una simplificación útil de una entidad de la vida real.
 
 <br>
 
 ## 📂 Miembros: ``Atributos`` y ``Métodos``
 
-El término «Miembros» (Members) se refiere a los componentes estructurales que definen qué es y qué puede hacer una clase en Java, según la Especificación del Lenguaje Java. En el contexto de la POO, los miembros son como los ***bloques de construcción de un objeto***.
+El término «Miembros» (Members) se refiere a los componentes estructurales que definen qué es y qué puede hacer una clase en Java, según la Especificación del Lenguaje Java.  
+En el contexto de la POO, los miembros son como los ***bloques de construcción de un objeto***.
 
-### 🔖 Atributos
+<br>
 
-Los atributos son **características que posee una clase**. Son variables contenidas y establecidas por los objetos y normalmente cuentan con un tipo de dato asociado.
+### ✧ Atributos
+
+Los atributos son **características que posee una clase**.  
+Son variables contenidas y establecidas por los objetos y normalmente cuentan con un tipo de dato asociado.
 
 Todos los **atributos** deben **comenzar con MINÚSCULA**, y si tienen más de una palabra comenzar con mayúscula. **No pueden haber espacios**. Ej: ``nombreMascota``, ``apellidoAlumno`` ...
 
@@ -83,9 +98,12 @@ modificadorAcceso class Alumno {
 }
 ```
 
-### 🔖 Métodos
+<br>
 
-Un MÉTODO es una FUNCIÓN, el nombre diferente depende del contexto. Los métodos son **acciones contenidas en una clase** y ayudan a **definir el comportamiento de la misma**, diciendo cuáles son las acciones que ésta puede hacer.
+### ✧ Métodos
+
+Un MÉTODO es una FUNCIÓN, el nombre diferente depende del contexto.  
+Los métodos son **acciones contenidas en una clase** y ayudan a **definir el comportamiento de la misma**, diciendo cuáles son las acciones que ésta puede hacer.
 
 Suelen estar representados como **verbos en infinitivo** (ar, er, ir) y puede tener opcionalmente valores de entrada (Parámetros) y valores de salida (Retorno).
 
@@ -102,21 +120,27 @@ Existen métodos que pueden ser:
 - **PROCEDIMIENTOS** ⟹ no retornan un valor.
 - **FUNCIONES** ⟹ retornan un valor de un tipo de dato en particular.
 
-### 🔹 Parámetros - valores de entrada
+<br>
 
-Los parámetros son **valores** que pueden ser **enviados** en un método. Los métodos toman los parámetros como valores de entrada, y así puede realizar las acciones necesarias a partir de los mismos. Todos los parámetros deben **tener un tipo de dato asociado** (como así también pueden haber parámetros vacíos).
+### ✔ Parámetros - valores de entrada
+
+Los parámetros son **valores** que pueden ser **enviados** en un método.  
+Los métodos toman los parámetros como valores de entrada, y así puede realizar las acciones necesarias a partir de los mismos.  
+Todos los parámetros deben **tener un tipo de dato asociado** (como así también pueden haber parámetros vacíos).
 
 Por ejemplo, en una clase ``auto`` tenemos los métodos ``encender()`` sin parámetros, ``acelerar(int)`` recibe como parámetro la cantidad de «km» a acelerar y ``frenar(int)`` recibe como parámetro la cantidad de «km» que debe bajar de velocidad.
 
-### 🔹 Retorno - valores de salida
+### ✔ Retorno - valores de salida
 
-La **salida** de un método es un **valor** en particular que el mismo **retorna luego de haber realizado una serie de acciones o procesos**. Los valores de entrada son datos, y los valores de salida son considerados generalmente como información. Todos los valores de salida deben tener un tipo de dato asociado.
+La **salida** de un método es un **valor** en particular que el mismo **retorna luego de haber realizado una serie de acciones o procesos**.  
+Los valores de entrada son datos, y los valores de salida son considerados generalmente como información.  
+Todos los valores de salida deben tener un tipo de dato asociado.
 
 En los métodos, es posible retornar un único valor de salida y ésta acción se lleva a cabo mediante la palabra reservada ``return``.
 
 <br>
 
-> 💡 **Resumen**  
+> [!NOTE]  
 > Un *atributo* es un **estado** interno del objeto.  
 > Un *método* es un **comportamiento** del objeto. 
 
@@ -130,7 +154,7 @@ Un constructor se llama automáticamente cuando se **crea un objeto de una clase
 
 Cada clase puede tener uno o más constructores y **cada constructor se llama SIEMPRE igual a la clase**
 
-> ⚠️ **IMPORTANTE**  
+> [!IMPORTANT]  
 > Los constructores NO retornan ningún valor (ni siquiera ``void``).
 
 ### 🔖 Tipos de Constructores y Sobrecarga
