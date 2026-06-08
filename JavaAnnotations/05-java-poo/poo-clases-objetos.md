@@ -25,9 +25,15 @@ Todas las clases tienen las siguientes características o particularidades:
 modificadorAcceso class nombreClase {
     // ... atributos y métodos
 }
+
+// ejemplo 
+private class Persona {
+    // ... atributos y métodos
+}
 ````
 
-Al momento de crear una clase y ponerle un **«nombre»** hay que tener en cuenta que generalmente están asociadas a **SUSTANTIVOS** en **SINGULAR**. Y todas las clases deben comenzar con letra **MAYÚSCULA** en cada una de sus palabras. Ej: ``Alumno``, ``AlumnoEgresado`` …
+Al momento de crear una clase y ponerle un **«nombre»** hay que tener en cuenta que generalmente están asociadas a **SUSTANTIVOS** en **SINGULAR**.  
+Todas las clases deben comenzar con letra **MAYÚSCULA** en cada una de sus palabras. Ej: ``Alumno``, ``AlumnoEgresado`` …
 
 <br>
 
@@ -66,19 +72,19 @@ Para entenderlo profundamente, debemos desglosar sus tres pilares esenciales:
       Ocurren dos cosas críticas:
 
         - **Invocación del Constructor**: Se ejecuta un bloque de código especial para inicializar los atributos.
-
         - **Reserva de Memoria Heap**: El objeto se aloja en un área de la memoria llamada **Heap**, mientras que la variable ``p1`` es solo una **referencia** que nos permite manipular dicho objeto.
 
    3. **Abstracción y Modelado**  
 
       Modelar un objeto no significa copiar la realidad tal cual, sino abstraer solo lo necesario para el sistema.  
-      Si modelamos una ``Persona`` para un sistema de nómina, nos interesa su ``sueldo``; si la modelamos para un hospital, nos interesa su ``tipoDeSangre``. Un objeto es, por tanto, una simplificación útil de una entidad de la vida real.
+      Si modelamos una ``Persona`` para un sistema de nómina, nos interesa su ``sueldo``; si la modelamos para un hospital, nos interesa su ``tipoDeSangre``.  
+      Un objeto es, por tanto, una simplificación útil de una entidad de la vida real.
 
 <br>
 
 ## 📂 Miembros: ``Atributos`` y ``Métodos``
 
-El término «Miembros» (Members) se refiere a los componentes estructurales que definen qué es y qué puede hacer una clase en Java, según la Especificación del Lenguaje Java.  
+El término «Miembros» refiere a los componentes estructurales que definen qué es y qué puede hacer una clase en Java, según la Especificación del Lenguaje Java.  
 En el contexto de la POO, los miembros son como los ***bloques de construcción de un objeto***.
 
 <br>
@@ -109,7 +115,13 @@ Suelen estar representados como **verbos en infinitivo** (ar, er, ir) y puede te
 
 ```java
 modificadorAcceso tipoDato_a_devolver nombreMétodo() {
-    ...   // acción a realizar según el método
+    // ... acción a realizar según el método
+}
+
+//ejemplo
+private String Rendir() {
+    // ... acción a realizar según el método
+
 }
 ```
 
@@ -148,29 +160,41 @@ En los métodos, es posible retornar un único valor de salida y ésta acción s
 
 ## 📂 Constructores
 
-Técnicamente, un constructor es un bloque de código encargado de inicializar la memoria reservada para un nuevo objeto. Aunque se asemeja a un método, carece de un tipo de retorno (ni siquiera `void`) porque su función no es devolver un valor, sino configurar la instancia.
+Técnicamente, un constructor es un bloque de código encargado de inicializar la memoria reservada para un nuevo objeto.  
+Aunque se asemeja a un método, carece de un tipo de retorno (ni siquiera `void`) porque su función no es devolver un valor, sino configurar la instancia.
 
-Un constructor se llama automáticamente cuando se **crea un objeto de una clase**. Estos se utilizan para inicializar los atributos del objeto cuando se crea. En Java, si un desarrollador no define ningún constructor, el compilador inserta automáticamente un **Constructor por Defecto** (invisible, sin parámetros y vacío).
+Un constructor se llama automáticamente cuando se **crea un objeto de una clase**. Estos se utilizan para inicializar los atributos del objeto cuando se crea.  
+ En Java, si un desarrollador no define ningún constructor, el compilador inserta automáticamente un **Constructor por Defecto** (invisible, sin parámetros y vacío).
 
 Cada clase puede tener uno o más constructores y **cada constructor se llama SIEMPRE igual a la clase**
+
+<br>
 
 > [!IMPORTANT]  
 > Los constructores NO retornan ningún valor (ni siquiera ``void``).
 
-### 🔖 Tipos de Constructores y Sobrecarga
+<br>
+
+### ✧ Tipos de Constructores y Sobrecarga
 
 En el diseño de software profesional, se suele utilizar la **Sobrecarga de Constructores** para ofrecer flexibilidad al instanciar clases.
 
 - El **Constructor Parametrizado** es aquel que recibe datos externos para asignar valores a los atributos inmediatamente, permitiendo que el objeto sea funcional desde su primer microsegundo de existencia.  
 
-- El **Constructor Sin Argumentos** (vacío) se utiliza a menudo para inicializar atributos con valores por defecto predefinidos o cuando se trabaja con frameworks como Hibernate o Spring, que requieren esta estructura para instanciar objetos mediante reflexión. Esta variedad permite que una misma clase responda a diferentes necesidades de negocio, ya sea creando un "``Usuario``" con datos mínimos o uno con el perfil completo.
+- El **Constructor Sin Argumentos** (vacío) se utiliza a menudo para inicializar atributos con valores por defecto predefinidos o cuando se trabaja con frameworks como Hibernate o Spring, que requieren esta estructura para instanciar objetos mediante reflexión.  
+Esta variedad permite que una misma clase responda a diferentes necesidades de negocio, ya sea creando un "``Usuario``" con datos mínimos o uno con el perfil completo.
 
-  > ⚠️ **NOTA**  
+  <br>
+
+  > [!NOTE]  
   > ***Reflexión*** se refiere a la capacidad de un programa para inspeccionar, analizar y modificar su propia estructura y comportamiento en tiempo de ejecución
 
-### 🔖 `this`
+<br>
 
-La palabra clave `this` en Java representa una **referencia al objeto actual dentro de una clase**. Su uso principal en los constructores es la **desambiguación**: cuando un parámetro del constructor tiene el mismo nombre que un atributo de la clase `this` le indica al compilador que nos referimos a la variable de instancia y no a la variable local. Sin el uso de `this`, el compilador priorizaría el parámetro, dejando el atributo de la clase sin cambios.
+### ✧ `this`
+
+La palabra clave `this` en Java representa una **referencia al objeto actual dentro de una clase**.  
+Su uso principal en los constructores es la **desambiguación**: cuando un parámetro del constructor tiene el mismo nombre que un atributo de la clase `this` le indica al compilador que nos referimos a la variable de instancia y no a la variable local. Sin el uso de `this`, el compilador priorizaría el parámetro, dejando el atributo de la clase sin cambios.
 
 ````java
 public class Vehiculo {
@@ -186,13 +210,19 @@ public class Vehiculo {
 }
 ````
 
-### 🔖 Uso Avanzado: Constructor Chaining
+<br>
 
-Más allá de la asignación de variables, `this` permite el **encadenamiento de constructores** mediante la sintaxis `this()`. Esta técnica permite que un constructor invoque a otro dentro de la misma clase, evitando la duplicación de lógica de inicialización.
+### ✧ Uso Avanzado: Constructor Chaining
 
-Por ejemplo, un constructor vacío podría llamar a un constructor parametrizado con valores por defecto utilizando `this("Desconocido", 0)`. Es imperativo recordar que, cuando se usa de esta forma, la llamada a `this()` debe ser obligatoriamente la **primera línea de código** dentro del constructor, asegurando así una jerarquía de inicialización ordenada y segura.
+Más allá de la asignación de variables, `this` permite el **encadenamiento de constructores** mediante la sintaxis `this()`.  
+Esta técnica permite que un constructor invoque a otro dentro de la misma clase, evitando la duplicación de lógica de inicialización.
 
-### ▫️ Ejemplo de Implementación
+Por ejemplo, un constructor vacío podría llamar a un constructor parametrizado con valores por defecto utilizando `this("Desconocido", 0)`.  
+Es imperativo recordar que, cuando se usa de esta forma, la llamada a `this()` debe ser obligatoriamente la **primera línea de código** dentro del constructor, asegurando así una jerarquía de inicialización ordenada y segura.
+
+<br>
+
+### ▫️ EJEMPLO de Implementación
 
 ```java
 public class Vehiculo {
