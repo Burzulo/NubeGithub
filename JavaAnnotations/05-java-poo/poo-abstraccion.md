@@ -131,6 +131,31 @@ Solo contiene la **firma** (nombre, parámetros y tipo de retorno) y termina en 
 
 <br>
 
+- ### Compilacion
+
+  Si hay una clase abstracta `FiguraGeometrica` con un método abstracto `calcularArea()`, y luego se crea una clase hija `Circulo` pero NO se escribe el método `calcularArea()`... Al momento de compilar el código Java lanzara un error de compilación y no te dejara continuar.
+  
+  ```java
+  // ❌ ERROR DE COMPILACIÓN
+  public class Circulo extends FiguraGeometrica {
+      private double radio;
+  }
+  
+  
+  // Solucion correcta
+  public class Circulo extends FiguraGeometrica {
+      private double radio;
+  
+      @Override
+      public void calcularArea() {
+          double area = Math.PI * Math.pow(radio, 2);
+          System.out.println("El área es: " + area);
+      }
+  }
+  ```
+
+<br>
+
 ### ⇒ Diferencias rápidas entre métodos
   
 | Característica | Método Concreto | Método Abstracto |
