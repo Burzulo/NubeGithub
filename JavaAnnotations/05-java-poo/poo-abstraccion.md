@@ -3,7 +3,7 @@
 <br>
 
 - [Clases Abstractas](#-abstraccion)
-- ❌ [Metodos Abstractos](#-metodos-abstractos)
+- [Metodos Abstractos](#-metodos-abstractos)
 
 <br>
 

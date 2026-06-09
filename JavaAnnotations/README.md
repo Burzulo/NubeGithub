@@ -100,7 +100,7 @@
 
 - **Abstracción** [⇒](./05-java-poo/poo-abstraccion.md)
   - Clases abstractas
-  - ❌ Métodos Abstractos
+  - Métodos Abstractos
 
 - **Herencia** [⇒](./05-java-poo/poo-herencia.md)
   - Jerarquías (`extends`)
