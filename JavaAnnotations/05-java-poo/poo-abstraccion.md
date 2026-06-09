@@ -35,29 +35,32 @@ Una clase abstracta se utiliza como una abstracción general de la cual se deriv
 
 Generalmente las clases abstractas indican **«ES/SER»** de un objeto.
 
-### ▫️ Cuando se usan las Clases Abstractas ?
-
-Cuando se desea definir una abstracción que englobe objetos de distintos tipos y se quiere hacer uso del **polimorfismo**.
-
-Ej: un ``círculo`` y un ``cuadrado`` son figuras geométricas, en este caso ``Figura`` es una **clase abstracta** porque no tiene sentido calcular su área, pero sí la de sus hijos (``cuadrado`` y ``círculo``) …
-
-Cuando una clase declara al menos un método abstracto, se debe marcar como abstracta utilizando la palabra clave `abstract`. Una clase abstracta puede tener tanto métodos abstractos como métodos concretos (implementados), pero **si o si debe implementar al menos un método abstracto para considerarse como clase abstracta como tal**.
-
-````java
-modificadorAcceso abstract class nombreClase {
-    ... 
-    modificadorAcceso abstract tipoDato nombreMétodo();   // método abstracto
-}
-
-// ejemplo de CLASE ABSTRACTA
-public abstract class Figura {
-   ... 
-   public abstract double calculaArea();
-}
-````
-
 <br>
 
-> ⚠️ **Importante**  
+- ### Cuando se usan las Clases Abstractas ?
+
+  Cuando se desea definir una abstracción que englobe objetos de distintos tipos y se quiere hacer uso del **polimorfismo**.
+
+  Por ejemplo, un ``círculo`` y un ``cuadrado`` son figuras geométricas, en este caso ``Figura`` es una **clase abstracta** porque no tiene sentido calcular su área, pero sí la de sus hijos (``cuadrado`` y ``círculo``) …
+  
+  Cuando una clase declara al menos un método abstracto, se debe marcar como abstracta utilizando la palabra clave `abstract`.  
+  Una clase abstracta puede tener tanto métodos abstractos como métodos concretos (implementados), pero **si o si debe implementar al menos un método abstracto para considerarse como clase abstracta como tal**.
+  
+  ````java
+  modificadorAcceso abstract class nombreClase {
+      ... 
+      modificadorAcceso abstract tipoDato nombreMétodo();   // método abstracto
+  }
+  
+  // ejemplo de CLASE ABSTRACTA
+  public abstract class Figura {
+     ... 
+     public abstract double calculaArea();
+  }
+  ````
+  
+<br>
+
+> [!IMPORTANT]  
 > Sus niveles de visualización deben ser *public o protected* pero **NUNCA _private_**.
 
