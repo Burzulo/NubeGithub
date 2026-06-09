@@ -3,7 +3,7 @@
 <br>
 
 - [Clases Abstractas](#-abstraccion)
-- ❌ [Métodos Abstractos](#-interfaces)
+- ❌ [Metodos Abstractos](#-metodos-abstractos)
 
 <br>
 
@@ -64,3 +64,78 @@ Generalmente las clases abstractas indican **«ES/SER»** de un objeto.
 > [!IMPORTANT]  
 > Sus niveles de visualización deben ser *public o protected* pero **NUNCA _private_**.
 
+<br>
+
+## 📂 Metodos Abstractos
+
+En POO, un **método abstracto** es una declaración de intención pero sin su implementación.  
+Es la herramienta principal para definir **qué** debe hacer una clase, pero dejando que las subclases decidan **cómo** hacerlo.
+
+Un método abstracto **no tiene cuerpo** (sin llaves `{ }`).  
+Solo contiene la **firma** (nombre, parámetros y tipo de retorno) y termina en punto y coma `;`.
+
+<br>
+
+> [!IMPORTANT]  
+> Si una clase contiene al menos un método abstracto, la **clase también debe ser declarada como abstracta**.
+
+<br>
+
+- ### Características claves:
+  
+  * **Obligatoriedad:** Cualquier clase "hija" que herede de una clase abstracta **debe** implementar de todos los métodos abstractos del padre.
+  * **Sin instancia:** No se puede crear un objeto de una clase que tenga métodos abstractos (estarían incompletos).
+  * **Firma:** Define el "Contrato" que las subclases deben respetar.
+
+<br>
+
+- ### Implementación y Sintaxis
+
+  Por ejemplo, todos los animales hacen un sonido pero un `Perro` no suena igual que un `Gato`.
+  
+    ```java
+    // La clase DEBE ser abstracta para tener métodos abstractos
+    public abstract class Animal {
+        private String nombre;
+
+        // Método con implementación
+        public void dormir() {
+            System.out.println("Zzz...");
+        }
+
+        // MÉTODO ABSTRACTO
+        public abstract void hacerSonido();
+    }
+
+
+    // La clase hija se ve OBLIGADA a implementar el método
+    public class Perro extends Animal {
+        @Override
+        public void hacerSonido() {
+            System.out.println("¡Guau! ¡Guau!");
+        }
+    }
+    ```
+
+<br>
+
+- ### ¿Cuándo se usan?
+
+  Se utilizan en dos situaciones principales:
+
+  - **Cuando la acción es común pero la forma es única:**  
+    Como en el ejemplo anterior, todos los `Animales` hacen sonidos pero cada uno lo hace de manera diferente.
+  
+  - **Para forzar estándares:**  
+    Si se trabaja en equipo, el arquitecto de software crea métodos abstractos para que los demás programadores no olviden implementar funciones críticas (como `validarUsuario()` o `procesarPago()`).
+
+<br>
+
+### ⇒ Diferencias rápidas entre métodos
+  
+| Característica | Método Concreto | Método Abstracto |
+| --- | --- | --- |
+| **Cuerpo `{ }`** | Sí tiene | No tiene, termina en `;` |
+| **Palabra clave** | No requiere | Requiere `abstract` |
+| **Implementación** | Ya está definida | Se delega a la subclase |
+| **Uso** | Acciones compartidas | Acciones obligatorias pero variables |

@@ -2,7 +2,7 @@
 # 📌 TITULO PPAL
 ## 📂 TITULO SECUNDARIO
 ### ✧
-#### ▫️ ⇒ ⇝ ✓ ✔ ✘ 
+#### ▫️ ⇒ ✓ ✔ ✘ 
 
 <br>
 
