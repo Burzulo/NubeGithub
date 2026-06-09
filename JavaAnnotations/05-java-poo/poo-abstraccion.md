@@ -9,17 +9,24 @@
 
 ## 📂 Abstraccion
 
-La abstracción en POO es el proceso de **identificar y separar las características esenciales de un objeto** de la vida real para representarlas de forma abstracta o lógica en un programa. En Java, se logra mediante la creación de clases y la definición de sus atributos y métodos.
+La abstracción en POO es el proceso de **identificar y separar las características esenciales de un objeto** de la vida real para representarlas de forma abstracta o lógica en un programa.  
+En Java, se logra mediante la creación de clases y la definición de sus atributos y métodos.
 
-### 🔖 Clases Abstractas
+### ✧ Clases Abstractas
 
-Es una clase que **NO PUEDE SER INSTANCIADA** directamente, es decir, no se pueden (o deben) crear objetos de esa clase específica. Se UTILIZA COMO una **clase base o plantilla** para otras clases relacionadas.
+Es una clase que **NO PUEDE SER INSTANCIADA** directamente, es decir, no se pueden (o deben) crear objetos de esa clase específica.  
+Se UTILIZA COMO una **clase base o plantilla** para otras clases relacionadas.
 
-La principal característica de una clase abstracta es que puede tener métodos abstractos. Un método abstracto **es abstracto cuando está declarado pero sin su implementación**, es decir, no contiene entre sus «llaves» nada de código. En un MÉTODO ABSTRACTO, **sólo se declara su firma, incluyendo el nombre del método y los parámetros que acepta**, nada más que eso, convirtiéndola así en una **clase padre**.
+La principal característica de una clase abstracta es que puede tener métodos abstractos.  
+Un método abstracto **es abstracto cuando está declarado pero sin su implementación**, es decir, no contiene entre sus «llaves» nada de código.  
+En un MÉTODO ABSTRACTO, **sólo se declara su firma, incluyendo el nombre del método y los parámetros que acepta**, nada más que eso, convirtiéndola así en una **clase padre**.
 
-Las clases que heredan de una clase abstracta, llamadas «subclases o clases hijas», deben proporcionar una implementación para todos los métodos abstractos heredados. Esto significa que **las subclases deben completar / implementar los métodos abstractos declarados en la clase abstracta**.
+Las clases que heredan de una clase abstracta, llamadas «subclases o clases hijas», deben proporcionar una implementación para todos los métodos abstractos heredados.  
+Esto significa que **las subclases deben completar / implementar los métodos abstractos declarados en la clase abstracta**.
 
-> 💡 **Importante**  
+<br>
+
+> [!IMPORTANT]  
 > Cuando se usan clases abstractas, **una clase no puede heredar de varias clases abstractas a la vez** (como en las interfaces), **solo UNA**.
 
 <br>
