@@ -10,71 +10,79 @@
 
 ## 📂 Interfaces
 
-Una interfaz es un tipo de referencia, similar a una clase, que puede contener solo CONSTANTES, firmas de métodos, métodos predeterminados, métodos estáticos y tipos anidados. Por lo tanto, su función principal es **«definir un conjunto de comportamientos que deben ser implementados por cualquier clase que firme ese contrato»**.
+Una interfaz es un tipo de referencia, similar a una clase, que puede contener solo CONSTANTES, firmas de métodos, métodos predeterminados, métodos estáticos y tipos anidados.  
+Por lo tanto, su función principal es **«definir un conjunto de comportamientos que deben ser implementados por cualquier clase que firme ese contrato»**.
 
 Las clases que implementan una interfaz deben ser las encargadas de proporcionar la implementación de todos los métodos declarados en la misma.
 
-> 💡 **NOTA**  
-> "**La interfaz define un ROL (lo que el objeto HACE), mientras que la clase define una IDENTIDAD (lo que el objeto ES).**"
+<br>
+
+> [!NOTE]  
+> "La interfaz define un ROL (lo que el objeto HACE), mientras que la clase define una IDENTIDAD (lo que el objeto ES)."
 
 <br>
 
-### 🔖 ``implements``
+### ✧ ``implements``
 
 Cuando una clase emplea la palabra reservada ``implements``, está «firmando» un compromiso legal ante el compilador: **"Yo prometo que voy a proporcionar una implementación para todos los métodos declarados en esta interfaz"**.
 
 Si la clase no cumple su promesa (no implementa los métodos), el código simplemente no compilará, a menos que la clase sea declarada como ``abstract``.
 
-### ▫️ Sintaxis
+- ### Sintaxis
 
-````Java
-// 1. Declaración de la Interfaz
-public interface Volador {
-    void volar(); // Implícitamente public abstract
-}
-
-// 2. Clase que IMPLEMENTA la Interfaz
-public class Pato implements Volador { 
-
-    @Override
-    public void volar() {
-        // Lógica de implementación de Pato
+    ```Java
+    // 1. Declaración de la Interfaz
+    public interface Volador {
+        void volar(); // Implícitamente public abstract
     }
-}
-````
 
-Si una clase debe cumplir varios «contratos», donde se deben implementar múltiples interfaces, estas se enumeran separadas por comas.
+    // 2. Clase que IMPLEMENTA la Interfaz
+    public class Pato implements Volador { 
 
-````Java
-public class Pato implements Volador, Nadador, Comunicador {
-    // ... deben implementarse todos los métodos de las tres interfaces.
-}
-````
+        @Override
+        public void volar() {
+            // Lógica de implementación de Pato
+        }
+    }
+    ```
 
-⟹ **¿Por qué es útil esto?**  
-Imagina que estás construyendo un sistema de pagos. Puedes tener una interfaz ``MetodoPago``. No importa si es ``TarjetaCredito`` o ``PayPal``; mientras ambas «firmen el contrato» de tener un método ``procesarPago()``, el resto del sistema puede tratarlas por igual. Esto se conoce como **desacoplamiento**.
+    Si una clase debe cumplir varios «contratos», donde se deben implementar múltiples interfaces, estas se enumeran separadas por comas.
+
+    ```Java
+    public class Pato implements Volador, Nadador, Comunicador {
+        // ... deben implementarse todos los métodos de las tres interfaces.
+    }
+    ```
+
+    <br> 
+
+    > [!NOTE]  
+    > **¿Por qué es útil esto?**  
+    Imagina que estás construyendo un sistema de pagos. Puedes tener una interfaz ``MetodoPago``. No importa si es ``TarjetaCredito`` o ``PayPal``; mientras ambas «firmen el contrato» de tener un método ``procesarPago()``, el resto del sistema puede tratarlas por igual. Esto se conoce como **desacoplamiento**.
 
 <br>
 
 ## 📂 Evolucion de los Metodos
 
-Históricamente, las interfaces solo podían tener métodos abstractos (sin cuerpo). Pero hoy esto cambió para dar más flexibilidad sin romper el código existente.
+Históricamente, las interfaces solo podían tener métodos abstractos (sin cuerpo).  
+Pero hoy esto cambió para dar más flexibilidad sin romper el código existente.
 
 - ``default``  
-Permiten añadir nuevas funcionalidades a las interfaces existentes sin obligar a todas las clases que ya la implementaban a cambiar su código. Tienen cuerpo y se heredan.  
+  Permiten añadir nuevas funcionalidades a las interfaces existentes sin obligar a todas las clases que ya la implementaban a cambiar su código.  
+  Tienen cuerpo y se heredan.  
 
 - ``static``  
-Son métodos de utilidad que pertenecen a la interfaz, no a los objetos.  
-No se heredan y se invocan usando el nombre de la interfaz (ej. ``MiInterfaz.miMetodoEstatico()``).  
+  Son métodos de utilidad que pertenecen a la interfaz, no a los objetos.  
+  No se heredan y se invocan usando el nombre de la interfaz (ej. ``MiInterfaz.miMetodoEstatico()``).  
 
 - ``private``  
-Se usan para evitar la duplicación de código dentro de la interfaz, permitiendo que varios métodos ``default`` compartan una lógica común sin exponerla al exterior.
+  Se usan para evitar la duplicación de código dentro de la interfaz, permitiendo que varios métodos ``default`` compartan una lógica común sin exponerla al exterior.
 
-### ▪︎ Ejemplo Integrador 
+### ⇒ Ejemplo Integrador
 
-Una interfaz que define el comportamiento de un vehículo, y cómo cada método cumple un rol distinto:
+  Una interfaz que define el comportamiento de un vehículo, y cómo cada método cumple un rol distinto:
 
-````Java
+```Java
 public interface Vehiculo {
     
     // 1. Método Abstracto (El contrato clásico)
@@ -96,32 +104,34 @@ public interface Vehiculo {
         System.out.println("[LOG INTERNO]: " + mensaje);
     }
 }
-````
+```
 
-#### ⇒ Análisis
+- #### Análisis del código
 
-  - **`acelerar()`**: Obliga a cualquier clase (ej. `Auto`, `Moto`) a escribir su propia lógica. Si no lo hacen, el código **no compila**.  
+  - `acelerar()`: Obliga a cualquier clase (ej. `Auto`, `Moto`) a escribir su propia lógica. Si no lo hacen, el código **no compila**.  
 
-  - **`encender()`**: Si se crea un `Auto`, ya tiene este método "gratis". No es necesario programarlo de nuevo, pero se puede *sobrescribirlo* en caso necesario.  
+  - `encender()`: Si se crea un `Auto`, ya tiene este método "gratis". No es necesario programarlo de nuevo, pero se puede *sobrescribirlo* en caso necesario.  
 
-  - **`esCombustibleValido()`**: Se usa así: `Vehiculo.esCombustibleValido("Diesel")`. No se necesita crear un objeto para usarlo.  
+  - `esCombustibleValido()`: Se usa así: `Vehiculo.esCombustibleValido("Diesel")`. No se necesita crear un objeto para usarlo.  
 
-  - **`registrarLog()`**: Solo existe dentro de la interfaz. Si se intenta llamarlo desde fuera (como desde la clase `Main`), Java dará un error. Sirve para que `encender()` no tenga tanto código repetido si tuvieras otros métodos `default`.
+  - `registrarLog()`: Solo existe dentro de la interfaz. Si se intenta llamarlo desde fuera (como desde la clase `Main`), Java dará un error. Sirve para que `encender()` no tenga tanto código repetido si tuvieras otros métodos `default`.
 
 <br>
 
-> 💡 **Consejo**
+> [!TIP]  
 > No hay que abusar de los métodos `default`. Si una interfaz empieza a tener demasiada lógica (mucho cuerpo de código), quizás debería ser una **Clase Abstracta**. La interfaz debe mantenerse lo más "limpia" posible.
 
 <br>
 
 ## 📂 Clases abstractas vs Interfaces
 
-### 🔖 Comparativa de Componentes y Propósito
+<br>
+
+### ▫️ Comparativa de Componentes y Propósito
 
 La tabla se centra en la estructura interna y el objetivo principal de cada mecanismo.
 
-| Característica | Clases Abstractas| Interfaces |
+| Característica | Clases Abstractas | Interfaces |
 | :--- | :--- | :--- |
 | Filosofía de Diseño | Define una identidad base: **"ES / SER"** | Define una capacidad: **"PUEDE HACER"** |
 | Estado (Variables) | Puede tener **estado** (variables de instancia que cambian) | **No tiene estado**. Solo constantes (``public static final``) |
@@ -132,7 +142,7 @@ La tabla se centra en la estructura interna y el objetivo principal de cada meca
 
 <br>
 
-### 🔖 Comparativa de Herencia y Uso
+### ▫️ Comparativa de Herencia y Uso
 
 Esta tabla se enfoca en cómo se relacionan con otras clases o interfaces en la jerarquía.
 
