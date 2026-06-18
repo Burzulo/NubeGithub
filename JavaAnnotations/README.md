@@ -121,8 +121,8 @@
   - Métodos `default`, `static` y `private`
   - Comparativa: Clases abstractas vs. Interfaces
 
-- **Genéricos (Generics)**
-  - ❌ El concepto de tipo parametrizado `<T>`
+- **Genéricos**
+  - El concepto de tipo parametrizado `<T>`
 
 - **Java Collections Framework**
   - ❌ Jerarquía de la API: Interface Collection vs. Map
