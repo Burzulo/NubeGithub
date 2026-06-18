@@ -121,7 +121,7 @@
   - Métodos `default`, `static` y `private`
   - Comparativa: Clases abstractas vs. Interfaces
 
-- **Genéricos**
+- **Genéricos** [⇒](./05-java-poo/poo-genericos.md)
   - El concepto de tipo parametrizado `<T>`
 
 - **Java Collections Framework**

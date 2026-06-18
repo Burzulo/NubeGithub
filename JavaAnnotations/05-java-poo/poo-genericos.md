@@ -2,8 +2,8 @@
 
 <br>
 
-- [Genericos](#-generics)
-- [...](#-herencia-super)
+- [...](#-)
+- [...](#-)
 
 <br>
 
