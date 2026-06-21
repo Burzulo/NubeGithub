@@ -126,7 +126,7 @@
 
 - **Java Collections Framework**
   - Jerarquía de la API: Interface `Collection` vs. `Map`
-  - ❌ Listas: `ArrayList` vs. `LinkedList`
+  - Listas: `ArrayList` vs. `LinkedList`
   - ❌ Conjuntos: `HashSet`, `LinkedHashSet` y `TreeSet` para evitar duplicados
   - ❌ Mapas: `HashMap` y `TreeMap` (almacenamiento clave-valor)
   - ❌ Ordenación: Interfaces `Comparable` y `Comparator`
