@@ -125,11 +125,11 @@
   - El concepto de tipo parametrizado `<T>`
 
 - **Java Collections Framework**
-  - ❌ Jerarquía de la API: Interface Collection vs. Map
-  - ❌ Listas: ArrayList vs. LinkedList (cuándo usar cada una)
-  - ❌ Conjuntos: HashSet, LinkedHashSet y TreeSet (evitar duplicados)
-  - ❌ Mapas: HashMap y TreeMap (almacenamiento Clave-Valor)
-  - ❌ Ordenación: Interfaces Comparable y Comparator
+  - Jerarquía de la API: Interface `Collection` vs. `Map`
+  - ❌ Listas: `ArrayList` vs. `LinkedList`
+  - ❌ Conjuntos: `HashSet`, `LinkedHashSet` y `TreeSet` para evitar duplicados
+  - ❌ Mapas: `HashMap` y `TreeMap` (almacenamiento clave-valor)
+  - ❌ Ordenación: Interfaces `Comparable` y `Comparator`
 
 - **Manejo de Excepciones** [⇒](./05-java-poo/poo-excepciones.md)
   - Jerarquía de errores: `Throwable`, `Error` vs `Exception`
