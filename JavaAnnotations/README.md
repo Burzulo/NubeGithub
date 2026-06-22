@@ -128,7 +128,7 @@
   - Jerarquía de la API: Interface `Collection` vs. `Map`
   - Listas: `ArrayList` vs. `LinkedList`
   - Conjuntos: `HashSet`, `LinkedHashSet` y `TreeSet` para evitar duplicados
-  - ❌ Mapas: `HashMap` y `TreeMap` (almacenamiento clave-valor)
+  - Mapas: `HashMap` y `TreeMap` (almacenamiento clave-valor)
   - ❌ Ordenación: Interfaces `Comparable` y `Comparator`
 
 - **Manejo de Excepciones** [⇒](./05-java-poo/poo-excepciones.md)

@@ -4,7 +4,7 @@
 - [Java Collections Framework: La Jerarquía](#-jerarquía)
 - [Listas: `ArrayList` & `LinkedList`](#-listas)
 - [Conjuntos: `HashSet`, `LinkedHashSet` y `TreeSet`](#-set-conjuntos)
-- [...](#-...)
+- [Mapas: `HashMap`, `LinkedHashMap` y `TreeMap`](#-mapas)
 
 <br>
 
@@ -295,8 +295,6 @@ Por el contrario, elegir `LinkedList` únicamente cuando el sistema va a estar i
 
 La interfaz `Set` representa una colección de elementos individuales que NO PERMITE elementos duplicados. A diferencia de las listas, los conjuntos no se basan en un índice numérico posicional, sino en las propiedades matemáticas de los elementos para asegurar su UNICIDAD.
 
-En Java existen tres implementaciones principales de `Set`, cada una orientada a un comportamiento específico en memoria:
-
 <br>
 
 ### ✧ HashSet
@@ -388,3 +386,129 @@ Elegir `TreeSet` únicamente cuando se necesita que los elementos se mantengan o
 
 <br>
 
+## 📂 Mapas
+
+Un mapa representa una colección estructurada en **pares Clave-Valor (`<K, V>`)**. Este forma parte de una rama totalmente independiente a las `Collection` y esta diseñada para asociar un identificador único (Clave) a un registro específico (Valor).
+
+<br>
+
+### ✧ HashMap
+
+Clase que se estructura internamente mediante una tabla de dispersión (*Hash Table*), diseñada para ofrecer la máxima velocidad de búsqueda posible.
+
+`HashMap` procesa la clave del registro a través de su código Hash para asignarle una celda en memoria. Esta estructura ofrece como principal ventaja un acceso, inserción y recuperación directos de tiempo constante. Su mayor desventaja radica en que **no mantiene ningún tipo de orden** para las claves; al iterar el mapa, los elementos aparecerán de forma completamente aleatoria respecto a cómo se ingresaron.
+
+```java
+// Sintaxis: Map<Tipo_Clave, Tipo_Valor> nombre = new HashMap<>();
+Map<Integer, String> empleados = new HashMap<>();
+
+// .put() para agregar elementos (Clave, Valor)
+empleados.put(3, "Gonza");
+empleados.put(4, "Belu");
+empleados.put(5, "Oli");
+
+// Si repetimos una clave, se sobrescribe el valor anterior
+empleados.put(3, "Gonzalo"); 
+
+System.out.println(empleados); // Output: {3=Gonzalo, 4=Belu, 5=Oli}
+```
+
+<br>
+
+### ✧ LinkedHashMap
+
+Clase que combina la velocidad de la *Hash Table* con la estructura secuencial de una lista doblemente enlazada.
+
+Internamente, funciona de forma idéntica a `HashMap` para asegurar que las claves sean únicas, pero añade enlaces de memoria entre los nodos para recordar la secuencia exacta de entrada. 
+
+Su principal ventaja es que **mantiene estrictamente el orden de inserción** de los registros al momento de recorrer el mapa. Su única desventaja es que requiere un consumo de memoria RAM ligeramente superior para poder almacenar los punteros que unen las claves entre sí.
+
+```java
+Map<Integer, String> historial = new LinkedHashMap<>();
+
+historial.put(10, "Inicio de Sesión");
+historial.put(2, "Carga de Datos");
+historial.put(45, "Cierre de Sesión");
+
+// Conserva el orden exacto en el que se registraron los eventos
+System.out.println(historial); // Output: {10=Inicio de Sesión, 2=Carga de Datos, 45=Cierre de Sesión}
+```
+
+<br>
+
+### ✧ TreeMap
+
+Clase que se estructura mediante un «Red-Black Tree», diseñada exclusivamente para mantener las claves ordenadas en todo momento.
+
+Cada vez que se inserta un nuevo par clave-valor, la estructura compara la clave con los nodos existentes del árbol y la ubica en su posición correspondiente. 
+
+Su principal ventaja es que **mantiene todas las claves ordenadas automáticamente** bajo su orden natural (alfabético para textos o numérico para IDs). Su mayor desventaja es el rendimiento, ya que buscar o insertar datos es más lento debido a las operaciones de balanceo del árbol interno.
+
+```java
+Map<Integer, String> prioridades = new TreeMap<>();
+
+prioridades.put(5, "Baja");
+prioridades.put(1, "Crítica");
+prioridades.put(3, "Media");
+
+// Las claves se ordenan solas de menor a mayor
+System.out.println(prioridades); // Output: {1=Crítica, 3=Media, 5=Baja}
+```
+
+<br>
+
+### ⇒ Métodos de Manipulación y Consulta
+
+La interfaz `Map` cuenta con un conjunto de métodos especializados para interactuar con los pares de datos:
+
+1. **Recuperación y Búsqueda**
+
+   - `get(Object clave)` devuelve el valor asociado a la clave brindada. Si la clave no existe en el mapa, retorna `null`.
+   - `containsKey(Object clave)` verifica con un booleano (`true`/`false`) si la clave especificada ya existe en el mapa.
+   - `containsValue(Object valor)` comprueba si el mapa contiene el valor especificado (este método es más lento porque debe revisar todo el mapa).
+
+     ```java
+     // Obtener el valor de la clave 4
+     String nombre = empleados.get(4); // Retorna: "Belu"
+     
+     // Validar existencia de una clave antes de operar
+     if (empleados.containsKey(5)) {
+         System.out.println("El empleado existe en el sistema.");
+     }
+     ```
+
+<br>
+
+2. **Eliminación y Extracción**
+
+   - `remove(Object clave)` elimina por completo el registro asociado a la clave brindada.
+   - `keySet()` devuelve un conjunto (`Set`) que contiene únicamente todas las claves presentes en el mapa.
+   - `values()` devuelve una colección (`Collection`) con todos los valores almacenados, permitiendo duplicados si existen.
+
+     ```java
+     // Eliminar el registro de la clave 3
+     empleados.remove(3);
+     
+     // Extraer el set de claves para recorrer el mapa
+     System.out.println(empleados.keySet()); // Ejemplo Output: [4, 5]
+     
+     // Extraer la lista de valores
+     System.out.println(empleados.values()); // Ejemplo Output: [Belu, Oli]
+     ```
+
+<br>
+
+### - ¿Cuál elegir?
+
+Para decidir qué implementación de `Map` utilizar en entornos reales, la convención estándar en el desarrollo es contundente: por defecto, usar siempre `HashMap`.
+
+Elegir `HashMap` cuando la prioridad absoluta de la aplicación sea la velocidad de respuesta al buscar información y el orden de los datos no afecte al negocio. Un caso real es el almacenamiento de sesiones de usuarios activos en un servidor web: necesitas asociar el *Token* único de sesión (Clave) al objeto con los datos del usuario (Valor). No te importa quién inició sesión primero ni el orden de los IDs, solo necesitas recuperar los datos del usuario en millonésimas de segundo cada vez que navega por la página.
+
+Elegir `LinkedHashMap` cuando necesitas búsquedas veloces pero es un requisito indispensable del negocio recordar la secuencia exacta en la que se registraron los datos. Un escenario real es la cola de procesamiento de un sistema de facturación o el historial de cambios de un pedido de logística: requieres asociar el ID de la operación con su descripción, manteniendo intacta la línea de tiempo cronológica en la que el operario fue escaneando los paquetes.
+
+Elegir `TreeMap` únicamente cuando necesitas que la información se presente ordenada al usuario de manera constante según el criterio de la clave, delegando esa carga de procesamiento a la estructura de datos. Un ejemplo real es un sistema de inventario o un listado de códigos postales donde las claves son los números de zona; el mapa acomodará de menor a mayor cada nueva zona que se dé de alta automáticamente, facilitando la exportación directa de reportes ya ordenados en pantalla.
+
+<br>
+
+> [!TIP]  
+> En producción, `HashMap` es la estructura predilecta por su rendimiento inmediato. Solo se asume el costo de memoria de `LinkedHashMap` o el procesamiento de `TreeMap` si las reglas de negocio exigen explícitamente un control sobre el orden.
