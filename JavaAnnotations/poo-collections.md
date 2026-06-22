@@ -3,7 +3,7 @@
 
 - [Java Collections Framework: La Jerarquía](#-jerarquía)
 - [Listas: `ArrayList` & `LinkedList`](#-listas)
-- [...](#-...)
+- [Conjuntos: `HashSet`, `LinkedHashSet` y `TreeSet`](#-set-conjuntos)
 - [...](#-...)
 
 <br>
@@ -272,3 +272,119 @@ Tanto `ArrayList` como `LinkedList` comparten estas funciones esenciales para ma
    // Al tener toString(), esto imprimirá los datos reales y no la memoria
    System.out.println(lista.get(0).toString());
    ```
+
+<br>
+
+### - Cual elegir ?
+
+Para decidir cuál implementación de `List` usar en el día a día, la regla general en el desarrollo de software es muy simple: por defecto, usar siempre `ArrayList`.  
+Solo cambiar a `LinkedList` en escenarios muy específicos de rendimiento.
+
+Elegir `ArrayList` cuando la aplicación necesita buscar, leer o consultar información constantemente y la mayoría de las inserciones se hacen al final de la cola. Un ejemplo real es un catálogo de productos en una aplicación web o la lista de órdenes del día en un panel logístico; los datos se cargan una vez (o se añaden al final) y los usuarios pasan todo el día consultando, buscando o filtrando esos registros mediante sus índices, lo cual es instantáneo en memoria contigua.
+
+Por el contrario, elegir `LinkedList` únicamente cuando el sistema va a estar insertando o eliminando datos de forma masiva y continua en el medio o al principio de la estructura. Un caso real es la gestión de una fila de prioridades críticas en una terminal de carga (donde constantemente se cuelan camiones de alta prioridad al inicio de la fila o se cancelan turnos intermedios); aquí se cambia la lectura rápida por la capacidad de alterar el orden de los elementos al instante sin sobrecargar el servidor reorganizando posiciones en la memoria.
+
+<br>
+
+> [!TIP]  
+> En el 95% de los proyectos reales se usa `ArrayList` porque la lectura es la operación más común y consume mucha menos memoria RAM que los nodos enlazados de una `LinkedList`.
+
+<br>
+
+## 📂 Set (Conjuntos)
+
+La interfaz `Set` representa una colección de elementos individuales que NO PERMITE elementos duplicados. A diferencia de las listas, los conjuntos no se basan en un índice numérico posicional, sino en las propiedades matemáticas de los elementos para asegurar su UNICIDAD.
+
+En Java existen tres implementaciones principales de `Set`, cada una orientada a un comportamiento específico en memoria:
+
+<br>
+
+### ✧ HashSet
+
+Clase que se estructura internamente mediante una tabla Hash, lo que la convierte en la opción más rápida del framework para buscar, agregar o eliminar elementos.
+
+`HashSet` utiliza el código Hash del objeto (`hashCode()`) para determinar su ubicación exacta en memoria. Esta implementación ofrece como principal ventaja un rendimiento insuperable de tiempo constante para las operaciones básicas.
+
+Sin embargo, su mayor desventaja radica en que no garantiza ningún orden para sus elementos; al recorrer un `HashSet`, el orden de salida puede ser completamente caótico y diferente al orden en el que se insertaron los datos.
+
+```java
+// Inicialización estándar
+Set<String> paises = new HashSet<>();
+
+// .add() para agregar elementos
+paises.add("Argentina");
+paises.add("España");
+paises.add("Argentina"); // Java ignora silenciosamente este duplicado
+
+System.out.println(paises); // Output: [España, Argentina] (Sin orden fijo)
+```
+
+<br>
+
+### ✧ LinkedHashSet
+
+Clase que combina una tabla Hash con una lista doblemente enlazada para mantener un registro de las inserciones.
+
+Internamente, funciona de manera idéntica a `HashSet` para garantizar que no existan duplicados, pero añade punteros entre sus elementos para recordar la secuencia de entrada.
+
+Su principal ventaja es que mantiene estrictamente el ORDEN de inserción de los elementos al momento de recorrerlos.
+
+por el contrario, su única desventaja frente a `HashSet` es un consumo de memoria ligeramente superior debido a la necesidad de almacenar las referencias de los enlaces.
+
+```java
+Set<String> nombres = new LinkedHashSet<>();
+
+nombres.add("Gonza");
+nombres.add("Juan");
+nombres.add("Ana");
+
+// Mantiene exactamente el orden en el que entraron
+System.out.println(nombres); // Output: [Gonza, Juan, Ana]
+```
+
+<br>
+
+### ✧ TreeSet
+
+Clase que se estructura mediante un «Red-Black Tree», orientada exclusivamente al ORDENAMIENTO AUTOMÁTICO de datos.
+
+Internamente, cada vez que se añade un elemento, la estructura lo evalúa y lo posiciona en su lugar correspondiente según su orden natural o un criterio personalizado.
+
+La principal ventaja de `TreeSet` es que mantiene los elementos ordenados automáticamente (de forma alfabética para textos o ascendente para números). Sin embargo, su mayor desventaja es que el rendimiento es notablemente más lento en comparación con las otras implementaciones, ya que requiere rebalancear el árbol con cada inserción o eliminación.
+
+```java
+Set<Integer> numeros = new TreeSet<>();
+
+numeros.add(50);
+numeros.add(10);
+numeros.add(35);
+
+// Se ordenan de forma natural de menor a mayor automáticamente
+System.out.println(numeros); // Output: [10, 35, 50]
+```
+
+<br>
+
+> [!IMPORTANT]  
+> **¿Cómo sabe Java si un objeto está duplicado?**  
+> Para tipos de datos nativos como `String` o `Integer`, Java ya sabe cómo compararlos. Pero si se van a guardar objetos de las propias clases (ej. `Set<Persona>`), es obligatorio sobrescribir los métodos `equals()` y `hashCode()` en la clase `Persona`. Si no se hace, Java comparará las direcciones de memoria y permitirá registrar dos personas con los mismos datos.
+
+<br>
+
+### - Cual elegir ?
+
+Para elegir qué implementación de `Set` usar en la vida real, la regla es muy directa porque cada una resuelve un problema de ordenamiento totalmente distinto. Por defecto, si solo importa la velocidad y borrar duplicados, usar siempre `HashSet`.
+
+Elegir `HashSet` cuando la única prioridad es la velocidad absoluta para verificar si algo ya existe o para eliminar duplicados, sin importar en absoluto el orden de los elementos. Un caso real es el control de acceso en una terminal de carga: necesitas validar instantáneamente si el ID de un chofer que acaba de llegar está en la lista de personal autorizado. No te importa quién llegó primero ni el orden alfabético, solo necesitas que la consulta tarde millonésimas de segundo entre miles de registros.
+
+Elegir `LinkedHashSet` cuando se necesita garantizar que no haya duplicados pero es indispensable recordar el orden exacto en el que llegaron los datos. Un ejemplo real es un historial de las últimas 10 direcciones de entrega buscadas por un cliente en una aplicación de despacho; necesitas que las direcciones sean únicas (no repetir la misma casa dos veces), pero quieres mostrarlas en pantalla ordenadas exactamente desde la más reciente hasta la más antigua.
+
+Elegir `TreeSet` únicamente cuando se necesita que los elementos se mantengan ordenados de forma automática (alfabética o numéricamente) en todo momento, asumiendo un costo mayor de procesamiento. Un escenario real es un monitor de asignación de turnos o un listado de choferes disponibles ordenados alfabéticamente por su apellido; cada vez que un chofer se da de alta, el sistema lo inserta en la posición alfabética exacta automáticamente, ahorrándo el trabajo de ordenar la colección manualmente después.
+
+<br>
+
+> [!TIP]  
+> En producción, `HashSet` es el rey absoluto de los conjuntos debido a su velocidad implacable. El costo de memoria extra de `LinkedHashSet` o el costo de procesamiento de `TreeSet` solo es necesario si el negocio exige un orden específico.
+
+<br>
+
