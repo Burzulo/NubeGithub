@@ -2,22 +2,21 @@
 
 <br>
 
-- [01. Logica de Programación](#-logica-de-programacion)
-- [02. Entornos de Desarrollo](#-entornos-de-desarrollo)
-- [03. Java Standard Edition](#-java-standard-edition)
-- [04. ](#-...)
-- [05. Java POO - Programación Orientada a Objetos](#-programacion-orientada-a-objetos)
-- [06. ](#-...)
-- [07. ](#-...)
-- [08. Spring Boot](#-spring-boot)
-- [09. ](#-...)
-- [10. ](#-...)
-- [11. ](#-...)
-- [12. ](#-...)
-- [13. ](#-...)
-- [14. ](#-...)
-- [15. ](#-...)
-- [16. ](#-...)
+- [Logica de Programación](#-logica-de-programacion)
+- [Entornos de Desarrollo](#-entornos-de-desarrollo)
+- [Java Standard Edition](#-java-standard-edition)
+- [Java POO - Programación Orientada a Objetos](#-programacion-orientada-a-objetos)
+- [Programación Funcional](#-...)
+- [Patrones de Diseño](#-...)
+- [Bases de Datos](#-...)
+- [Java Web](#-...)
+- [Spring Boot](#-spring-boot)
+- [Microservicios](#-...)
+- [Seguridad](#-...)
+- [Testing](#-...)
+- [Deploy](#-...)
+- [Spring IA](#-...)
+- [Herramientas Complementarias](#-...)
 
 <br>
 
@@ -29,47 +28,45 @@
 
 ## ✧ Entornos de Desarrollo
 
-- **IntelliJ IDEA** [⇒](./02-entorno-desarrollo/id-intellij.md)
+- **IntelliJ IDEA** [⇒](./entorno-desarrollo/id-intellij.md)
   - Atajos de teclado
 
-- **Eclipse** [⇒](./02-entorno-desarrollo/id-eclipse.md)
+- **Eclipse** [⇒](./entorno-desarrollo/id-eclipse.md)
   - Atajos de teclado
-
-- **NetBeans**
 
 <br>
 
 ## ✧ Java Standard Edition
 
-- **Ecosistema Java** [⇒](./03-java-se/jse-ecosistema-java.md)
+- **Ecosistema Java** [⇒](./java-se/jse-ecosistema-java.md)
   - Arquitectura: Rol de la **JVM**, **JRE** y el **JDK**
   - Ciclo de vida: Compilacion (``javac``) vs. Ejecución (``java``), bytecode
   - Estructura básica: `class`, metodo `main`, `public static void main(String[] args)`
 
-- **Variables y Memoria** [⇒](./03-java-se/jse-variable-memoria.md)
+- **Variables y Memoria** [⇒](./java-se/jse-variable-memoria.md)
   - Variables y Tipos Primitivos: `int`, `double`, `boolean`, `char`, ...
   - Casting: Conversiones implícitas y explícitas
   - Wrappers: Autoboxing y Unboxing
   - ❌ Constantes: Uso de la palabra clave `final`
   - ❌ El String Pool: Inmutabilidad de la clase `String`
 
-- **Operadores** [⇒](./03-java-se/jse-operadores.md)
+- **Operadores** [⇒](./java-se/jse-operadores.md)
   - Aritméticos, Unarios, Relacionales y Lógicos
   - Ternario
 
-- **Estructuras de Control** [⇒](./03-java-se/jse-control-flujo.md)
+- **Estructuras de Control** [⇒](./java-se/jse-control-flujo.md)
   - Condicionales: `if`, `else if`, `else`
   - Selección múltiple: `switch`
   - Iteraciones (Bucles): ``for``, ``while``, ``do-while`` y ``for-each``
   - Control de saltos: ``break``, ``continue`` y ``return``
 
-- **Estructuras de Datos Estáticas (Arrays)** [⇒](./03-java-se/jse-arrays.md)
+- **Estructuras de Datos Estáticas (Arrays)** [⇒](./java-se/jse-arrays.md)
   - Arrays Unidimensionales y Multidimensionales
   - Propiedad ``lenght``
   - Recorrido: Uso de ``for`` tradicional vs. ``for-each``
   - Utilidades del Sistema: Clase ``java.util.Arrays`` (métodos `sort`, `fill`, `equals`, `toString`)
 
-- **Entrada/Salida (I/O)** [⇒](./03-java-se/jse-entrada-salida-datos.md)
+- **Entrada/Salida (I/O)** [⇒](./java-se/jse-entrada-salida-datos.md)
   - Lectura por consola: `Scanner`
   - Salida de datos: `System.out`
   - ❌ Manejo de rutas con `java.nio.file`
@@ -84,44 +81,44 @@
 
 ## ✧ Programacion Orientada a Objetos
 
-- **Fundamentos de Clases y Objetos** [⇒](./05-java-poo/poo-clases-objetos.md)
+- **Fundamentos de Clases y Objetos** [⇒](./java-poo/poo-clases-objetos.md)
   - Conceptos: Clase y Objeto (ciclo de vida e instanciación `new`)
   - Miembros de una clase: Atributos y Métodos
   - Constructores: Por defecto, parametrizados y el rol de `this`
   - ❌ Modificador `static`: Atributos y métodos de clase
 
-- **Gestión de Memoria** [⇒](./05-java-poo/poo-gestion-memoria.md)
+- **Gestión de Memoria** [⇒](./java-poo/poo-gestion-memoria.md)
   - El modelo *Stack* vs. *Heap*
   - El rol del *Garbage Collector*
 
-- **Encapsulamiento** [⇒](./05-java-poo/poo-encapsulamiento.md)
+- **Encapsulamiento** [⇒](./java-poo/poo-encapsulamiento.md)
   - Modificadores de acceso: `public`, `private`, `protected`, `default`
   - Uso de *getters / setters*
 
-- **Abstracción** [⇒](./05-java-poo/poo-abstraccion.md)
+- **Abstracción** [⇒](./java-poo/poo-abstraccion.md)
   - Clases abstractas
   - Métodos Abstractos
 
-- **Herencia** [⇒](./05-java-poo/poo-herencia.md)
+- **Herencia** [⇒](./java-poo/poo-herencia.md)
   - Jerarquías (`extends`)
   - `super`
   - Sobreescritura (`@Override`) y Sobrecarga de métodos
 
-- **Polimorfisimo** [⇒](./05-java-poo/poo-polimorfismo.md)
+- **Polimorfisimo** [⇒](./java-poo/poo-polimorfismo.md)
   - Casting de objetos: `upcasting` \ `downcasting`
   - Operador `instanceof`  
 
-- **Relaciones entre Clases** [⇒](./05-java-poo/poo-relaciones-entre-clases.md)
+- **Relaciones entre Clases** [⇒](./java-poo/poo-relaciones-entre-clases.md)
   - Asociación
   - Agregación
   - Composición
 
-- **Interfaces** [⇒](./05-java-poo/poo-interfaces.md)
+- **Interfaces** [⇒](./java-poo/poo-interfaces.md)
   - Declaración de Contratos (`implements`)
   - Métodos `default`, `static` y `private`
   - Comparativa: Clases abstractas vs. Interfaces
 
-- **Genéricos** [⇒](./05-java-poo/poo-genericos.md)
+- **Genéricos** [⇒](./java-poo/poo-genericos.md)
   - El concepto de tipo parametrizado `<T>`
 
 - **Java Collections Framework**
@@ -131,7 +128,7 @@
   - Mapas: `HashMap` y `TreeMap` (almacenamiento clave-valor)
   - ❌ Ordenación: Interfaces `Comparable` y `Comparator`
 
-- **Manejo de Excepciones** [⇒](./05-java-poo/poo-excepciones.md)
+- **Manejo de Excepciones** [⇒](./java-poo/poo-excepciones.md)
   - Jerarquía de errores: `Throwable`, `Error` vs `Exception`
   - Bloques de control: `try`, `catch`, `finally`
   - Flujo de Excepciones: `throw` vs `throws`

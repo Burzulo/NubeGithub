@@ -30,7 +30,7 @@ Las variables se expresan:
   tipoDato nombre;
 
   // ejemplo
-  int 56;
+  int numero = 56;
   ````
 
 <br>
